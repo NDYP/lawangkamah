@@ -48,6 +48,15 @@ class Administrasi extends CI_Controller
         $this->session->set_flashdata('success', 'Pengajuan Diterima');
         redirect('admin/administrasi/index', 'refresh');
     }
+    function proses($id_pengajuan)
+    {
+        $data = array(
+            'status' => 'Proses',
+        );
+        $this->M_User->update('pengajuan', $data, array('id_pengajuan' => $id_pengajuan));
+        $this->session->set_flashdata('success', 'Pengajuan Diproses');
+        redirect('admin/administrasi/index', 'refresh');
+    }
     function decline($id_pengajuan)
     {
         $data = array(

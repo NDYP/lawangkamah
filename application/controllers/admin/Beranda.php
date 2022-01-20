@@ -24,13 +24,24 @@ class Beranda extends CI_Controller
         $record = $query->result();
         $data = [];
 
-        //memanggil data jumlah jurnal
         foreach ($record as $row) {
             $data['label'][] = $row->month_name;
             $data['data'][] = (int) $row->count;
             $data['title'] = 'Kunjungan/Bulan';
         }
         $data['chart_data'] = json_encode($data);
+
+        $query = $this->M_Beranda->pengajuan();
+        $record = $query->result();
+        $x = [];
+
+        foreach ($record as $row) {
+            $x['label'][] = $row->month_name . ' ' . $row->opsi;
+            $x['data'][] = (int) $row->count;
+            $x['title'] = 'Pengajuan/Bulan';
+        }
+        $data['chart_data2'] = json_encode($x);
+
         $data['setting'] = $this->M_Setting->index()->row_array();
         $data['komentar'] = $this->M_Komentar->index()->result_array();
         $data['jumlah'] = $this->db->get_where('komentar', array('status' => 'Aktif'))->num_rows();

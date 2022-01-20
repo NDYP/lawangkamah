@@ -24,7 +24,8 @@
                     <div class="icon">
                         <i class="ion ion-ios-man"></i>
                     </div>
-                    <a href="<?= site_url('admin/Pejabat_Desa/index'); ?>" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?= site_url('admin/Pejabat_Desa/index'); ?>" class="small-box-footer">Lihat <i
+                            class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -38,7 +39,8 @@
                     <div class="icon">
                         <i class="ion ion-android-people"></i>
                     </div>
-                    <a href="<?= site_url('admin/kelompok/index') ?>" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?= site_url('admin/kelompok/index') ?>" class="small-box-footer">Lihat <i
+                            class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -52,7 +54,8 @@
                     <div class="icon">
                         <i class="ion ion-person"></i>
                     </div>
-                    <a href="<?= site_url('admin/penduduk/index') ?>" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?= site_url('admin/penduduk/index') ?>" class="small-box-footer">Lihat <i
+                            class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -66,10 +69,48 @@
                     <div class="icon">
                         <i class="ion ion-ios-people"></i>
                     </div>
-                    <a href="<?= site_url('admin/keluarga/index') ?>" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?= site_url('admin/keluarga/index') ?>" class="small-box-footer">Lihat <i
+                            class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3><?= $online; ?></h3>
+                        <p>Pengunjung Online</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-people"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3><?= $today; ?></h3>
+                        <p>Pengunjung hari ini</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-people"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3><?= $total; ?></h3>
+                        <p>Total Pengunjung</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-people"></i>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /.row -->
         <!-- Main row -->
@@ -81,7 +122,7 @@
                     <hr>
                 </h1>
             </section>
-            <section class="col-lg-8 connectedSortable">
+            <section class="col-lg-6 connectedSortable">
                 <!-- Custom tabs (Charts with tabs)-->
                 <div class="nav-tabs-custom">
                     <!-- Tabs within a box -->
@@ -94,51 +135,20 @@
                     </div>
                 </div>
             </section>
-            <div class="col-lg-4 col-xs-4">
-                <!-- small box -->
-                <div class="row">
-                    <div class="col-lg-12 col-xs-12">
-                        <div class="small-box bg-aqua">
-                            <div class="inner">
-                                <h3><?= $online; ?></h3>
-                                <p>Pengunjung Online</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-ios-people"></i>
+            <section class="col-lg-6 connectedSortable">
+                <!-- Custom tabs (Charts with tabs)-->
+                <div class="nav-tabs-custom">
+                    <!-- Tabs within a box -->
+                    <div class="tab-pane" id="tab_2">
+                        <div class="chart-container">
+                            <div class="bar-chart-container">
+                                <canvas id="bar-chart2" style="height: 30px;"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-xs-12">
-                        <!-- small box -->
-                        <div class="small-box bg-aqua">
-                            <div class="inner">
-                                <h3><?= $today; ?></h3>
-                                <p>Pengunjung hari ini</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-ios-people"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-xs-12">
-                        <!-- small box -->
-                        <div class="small-box bg-aqua">
-                            <div class="inner">
-                                <h3><?= $total; ?></h3>
-                                <p>Total Pengunjung</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-ios-people"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./col -->
+            </section>
+
         </div>
         <!-- /.row (main row) -->
     </section>

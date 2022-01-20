@@ -120,27 +120,50 @@
                     <li class="<?= ($this->uri->segment(2) == 'Dropdown_pekerjaan') ? 'active' : ''; ?>"><a
                             href="<?= base_url('admin/Dropdown_pekerjaan/index') ?>"><i class="fa fa-industry"></i>
                             Pekerjaan</a></li>
+                    <li class="<?= ($this->uri->segment(2) == 'Dropdown_pendidikan') ? 'active' : ''; ?>"><a
+                            href="<?= base_url('admin/Dropdown_pendidikan/index') ?>"><i class="fa fa-graduation"></i>
+                            Pendidikan</a></li>
+                    <li class="<?= ($this->uri->segment(2) == 'Dropdown_status') ? 'active' : ''; ?>"><a
+                            href="<?= base_url('admin/Dropdown_status/index') ?>"><i class="fa fa-graduation"></i>
+                            Status</a></li>
+                    <li class="<?= ($this->uri->segment(2) == 'Dropdown_agama') ? 'active' : ''; ?>"><a
+                            href="<?= base_url('admin/Dropdown_agama/index') ?>"><i class="fa fa-graduation"></i>
+                            Agama</a></li>
+                    <li class="<?= ($this->uri->segment(2) == 'Dropdown_penolong_kelahiran') ? 'active' : ''; ?>"><a
+                            href="<?= base_url('admin/Dropdown_penolong_kelahiran/index') ?>"><i
+                                class="fa fa-graduation"></i>
+                            Penolong Kelahiran</a></li>
+                    <li class="<?= ($this->uri->segment(2) == 'Dropdown_status_wn') ? 'active' : ''; ?>"><a
+                            href="<?= base_url('admin/Dropdown_status_wn/index') ?>"><i class="fa fa-graduation"></i>
+                            Status Warga Negara</a></li>
+                    <li class="<?= ($this->uri->segment(2) == 'Dropdown_golongan_darah') ? 'active' : ''; ?>"><a
+                            href="<?= base_url('admin/Dropdown_golongan_darah/index') ?>"><i
+                                class="fa fa-graduation"></i>
+                            Golongan Darah</a></li>
+                    <li class="<?= ($this->uri->segment(2) == 'Dropdown_asuransi') ? 'active' : ''; ?>"><a
+                            href="<?= base_url('admin/Dropdown_asuransi/index') ?>"><i class="fa fa-graduation"></i>
+                            Asuransi</a></li>
                     <!-- <li class="<?= ($this->uri->segment(2) == 'Dropdown_kategori_kelompok') ? 'active' : ''; ?>"><a href="<?= base_url('admin/Dropdown_kategori_kelompok/index') ?>"><i class="fa fa-list"></i> Kategori Kelompok</a></li> -->
-                </ul>
             </li>
-            <li
-                class="treeview <?= ($this->uri->segment(3) == 'logo' || $this->uri->segment(3) == 'title') ? 'active' : ''; ?>">
-                <a href="#">
-                    <i class="fa fa-gear"></i> <span>Setting</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="<?= ($this->uri->segment(3) == 'logo') ? 'active' : ''; ?>"><a
-                            href="<?= base_url('admin/setting/logo') ?>"><i class="fa fa-picture-o"></i> Logo Web</a>
-                    </li>
-                    <li class="<?= ($this->uri->segment(3) == 'title') ? 'active' : ''; ?>"><a
-                            href="<?= base_url('admin/setting/title') ?>"><i class="fa fa-tag"></i> Title Web</a></li>
-                </ul>
-            </li>
-            <li class="<?= ($this->uri->segment(2) == 'user') ? 'active' : ''; ?>"><a
-                    href="<?= base_url('admin/user/index') ?>"><i class="fa fa-desktop"></i> <span>User</span></a></li>
+        </ul>
+        <li
+            class="treeview <?= ($this->uri->segment(3) == 'logo' || $this->uri->segment(3) == 'title') ? 'active' : ''; ?>">
+            <a href="#">
+                <i class="fa fa-gear"></i> <span>Setting</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="<?= ($this->uri->segment(3) == 'logo') ? 'active' : ''; ?>"><a
+                        href="<?= base_url('admin/setting/logo') ?>"><i class="fa fa-picture-o"></i> Logo Web</a>
+                </li>
+                <li class="<?= ($this->uri->segment(3) == 'title') ? 'active' : ''; ?>"><a
+                        href="<?= base_url('admin/setting/title') ?>"><i class="fa fa-tag"></i> Title Web</a></li>
+            </ul>
+        </li>
+        <li class="<?= ($this->uri->segment(2) == 'user') ? 'active' : ''; ?>"><a
+                href="<?= base_url('admin/user/index') ?>"><i class="fa fa-desktop"></i> <span>User</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->

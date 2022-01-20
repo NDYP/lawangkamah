@@ -129,7 +129,8 @@ th {
                                         style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                                         <?php foreach ($penduduk as $x) : ?>
                                         <option name="id_penerima" value="<?= $x['id_penduduk']; ?>">NIK :
-                                            <?= $x['nik_penduduk']; ?> - <?= $x['nama_lengkap']; ?></option>
+                                            <?= $x['nik_penduduk']; ?> - <?= $x['nama_lengkap']; ?>
+                                            (<?= $x['pendapatan'] ?>)</option>
                                         <?php endforeach; ?>
                                     </select>
                                     <?php elseif ($z['sasaran'] == 'Keluarga') : ?>
@@ -137,17 +138,11 @@ th {
                                         style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                                         <?php foreach ($keluarga as $x) : ?>
                                         <option name="id_penerima" value="<?= $x['id_penduduk']; ?>">NO.KK :
-                                            <?= $x['no_kk']; ?> - <?= $x['nama_lengkap']; ?></option>
+                                            <?= $x['no_kk']; ?> - <?= $x['nama_lengkap']; ?> (<?= $x['pendapatan'] ?>)
+                                        </option>
                                         <?php endforeach; ?>
                                     </select>
-                                    <?php elseif ($z['sasaran'] == 'Kelompok') : ?>
-                                    <select name="id_penerima" class="form-control select21 select2-hidden-accessible"
-                                        style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                        <?php foreach ($kelompok as $x) : ?>
-                                        <option name="id_penerima" value="<?= $x['id_penduduk']; ?>">Nama Kelompok :
-                                            <?= $x['nama_kelompok']; ?> - <?= $x['nama_lengkap']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
+
                                     <?php endif; ?>
 
                                 </div>

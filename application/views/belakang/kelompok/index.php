@@ -75,7 +75,13 @@ th {
                                 </div>
                             </div>
                         </div>
-                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="tab_3">
+                            <div class="chart-container">
+                                <div class="bar-chart-container">
+                                    <canvas id="line-chart" style="height: 30px;"></canvas>
+                                </div>
+                            </div>
+                        </div><!-- /.tab-pane -->
                         <!-- /.tab-pane -->
                     </div>
                     <!-- /.tab-content -->

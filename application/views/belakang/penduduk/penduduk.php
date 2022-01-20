@@ -27,6 +27,9 @@ th {
                         <a href="<?= base_url('admin/penduduk/tambah_excel'); ?>"
                             class="btn btn-social btn-flat bg-green-gradient btn-sm visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block"><i
                                 class="fa fa-plus-circle"></i> Tambah Excel</a>
+                        <a href="<?= base_url('admin/excel/export'); ?>"
+                            class="btn btn-social btn-flat bg-green-gradient btn-sm visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block"><i
+                                class="fa fa-plus-circle"></i> Export Excel</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

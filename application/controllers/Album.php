@@ -36,7 +36,6 @@ class Album extends CI_Controller
 
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
         $data['pagination'] = $this->pagination->create_links();
 
         $data['profil'] = $this->M_Profil->index();

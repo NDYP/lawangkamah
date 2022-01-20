@@ -12,6 +12,10 @@
                 <a class="btn btn-social btn-flat bg-blue btn-sm" title="Line Data" href="#tab_3" data-toggle="tab">
                     <i class="fa fa-line-chart"></i>Line Data
                 </a>
+                <a class="btn btn-social btn-flat bg-red btn-sm" title="Line Data"
+                    href="<?= base_url('admin/excel/disabilitas') ?>">
+                    <i class="fa fa-book"></i>Export
+                </a>
             </div>
         </ul>
         <div class="tab-content">

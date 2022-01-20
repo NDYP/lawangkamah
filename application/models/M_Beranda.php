@@ -93,9 +93,18 @@ class M_Beranda extends CI_Model
         $query = $this->db->select('COUNT(id_pengunjung) as count, MONTHNAME(tanggal) as month_name')
             ->from('pengunjung')
             ->where('YEAR(tanggal)', date('Y'))
-            ->group_by('ip')
+            //->group_by('ip')
+            ->group_by('MONTHNAME(tanggal)')
             ->group_by('YEAR(tanggal)')
-            ->group_by('MONTH(tanggal)')
+            ->get();
+        return $query;
+    }
+    public function pengajuan()
+    {
+        $query = $this->db->select('COUNT(id_pengajuan) as count, MONTHNAME(timestamp) as month_name, opsi')
+            ->from('pengajuan')
+            ->where('YEAR(timestamp)', date('Y'))
+            ->group_by('MONTHNAME(timestamp), opsi')
             ->get();
         return $query;
     }

@@ -338,7 +338,8 @@ class M_Statistik extends CI_Model
     }
     public function pendapatan()
     {
-        $total = '(select count(penduduk.id_penduduk) from penduduk RIGHT JOIN penduduk_pendapatan on penduduk.id_pendapatan=penduduk_pendapatan.id_pendapatan)';
+        $total = '(select count(penduduk.id_penduduk) from penduduk
+        RIGHT JOIN penduduk_pendapatan on penduduk.id_pendapatan=penduduk_pendapatan.id_pendapatan)';
         $query = $this->db
             ->select('
             penduduk_pendapatan.pendapatan,
@@ -350,7 +351,7 @@ class M_Statistik extends CI_Model
             ->from('penduduk')
             ->join('penduduk_pendapatan', 'penduduk.id_pendapatan=penduduk_pendapatan.id_pendapatan', 'right')
             ->order_by('penduduk_pendapatan.id_pendapatan', 'ASC')
-            ->group_by('penduduk_pendapatan.id_pendapatan')
+            ->group_by('penduduk_pendapatan.pendapatan')
             ->get()
             ->result_array(); //ditampilkan dalam bentuk array
         return $query;

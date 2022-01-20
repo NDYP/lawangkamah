@@ -57,7 +57,7 @@
                                     <label class="">Hubungan Dalam Keluarga <text class="text-danger">*</text> </label>
                                     <select name="id_status_kk" class="form-control select21 select2-hidden-accessible"
                                         style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                        <option name="jenis_kelamin" value="">--Pilih--</option>
+                                        <option name="id_status_kk" value="">--Pilih--</option>
                                         <?php foreach ($status_kk as $x) : ?>
                                         <option name="id_status_kk"
                                             value=<?= $x['id_status_kk']; ?><?= set_select('id_status_kk', $x['id_status_kk']); ?>>

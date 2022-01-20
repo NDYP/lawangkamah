@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2021 at 06:49 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Dec 06, 2021 at 02:50 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -115,7 +114,8 @@ CREATE TABLE `bantuan` (
 --
 
 INSERT INTO `bantuan` (`id_bantuan`, `nama_bantuan`, `asal_dana`, `status`, `sasaran`, `keterangan`, `masa_berlaku`) VALUES
-(12, 'BLT', 'Desa', 'Aktif', '', 'bantuan langsung', '');
+(12, 'BLT', 'Desa', 'Aktif', 'Penduduk', 'bantuan langsung', ''),
+(13, 'zxczc', 'Desa', 'Aktif', 'Keluarga', 'zxczxc', '');
 
 -- --------------------------------------------------------
 
@@ -483,8 +483,8 @@ INSERT INTO `penduduk` (`id_penduduk`, `nik_penduduk`, `nama_lengkap`, `no_kk`, 
 (24, '6203104802660001', 'Masriyah', '6203102211080533', 'Perempuan', '', 'Lawang Kamah', '1966-08-02', 50, 60, '', '', 'Desa Lawang Kamah', '', 2, 0, '', '', 2, 4, 9, 1, 3, 2, 3, 6, 1, 12, '', 2, 1, '', ''),
 (25, '6271031401880006', 'Fendi Raya', '6203102711170001', 'Laki-Laki', '', 'Palangka Raya', '1988-02-01', 30, 40, '', '', 'Desa Lawang Kamah', '', 0, 0, '', '', 2, 5, 6, 1, 4, 2, 4, 6, 2, 12, '', 1, 1, '', ''),
 (26, '6203104308950002', 'Yuni Karlina', '6203102711170001', 'Perempuan', '', 'Lawang Kamah', '1995-03-08', 20, 30, '', '', 'Desa Lawang Kamah', '', 0, 0, '', '', 2, 5, 6, 1, 4, 2, 2, 6, 2, 12, '', 2, 1, '', ''),
-(27, '6203101103780002', 'Madiono', '6203102811140012', 'Laki-Laki', '', 'Mintin', '1978-11-03', 40, 50, '', '', 'Desa Lawang Kamah', '', 0, 0, '', '', 2, 3, 9, 1, 3, 2, 5, 6, 1, 12, '', 1, 1, '', ''),
-(28, '6203106108850001', 'Ruswati', '6203102811140012', 'Perempuan', '', 'Lawang Kamah', '1985-09-08', 30, 40, '', '', 'Desa Lawang Kamah', '', 0, 0, '', '', 2, 2, 1, 1, 3, 2, 4, 6, 1, 12, '', 2, 1, '6203106108850001', '1234');
+(27, '6203101103780002', 'Madiono', '6203102811140012', 'Laki-Laki', '', 'Mintin', '1970-01-01', 50, 60, '', '', 'Desa Lawang Kamah', '', 0, 0, '', '', 2, 3, 9, 1, 3, 2, 5, 6, 1, 12, '', 1, 25, '', ''),
+(28, '6203106108850001', 'Ruswati', '6203102811140012', 'Perempuan', '', 'Lawang Kamah', '1970-01-01', 50, 60, '', '', 'Desa Lawang Kamah', '', 0, 0, '', '', 2, 2, 3, 1, 3, 2, 4, 6, 1, 12, '', 2, 10, '6203106108850001', '1234');
 
 -- --------------------------------------------------------
 
@@ -631,21 +631,48 @@ INSERT INTO `penduduk_pekerjaan` (`id_pekerjaan`, `pekerjaan`) VALUES
 
 CREATE TABLE `penduduk_pendapatan` (
   `id_pendapatan` int(11) NOT NULL,
-  `pendapatan` varchar(40) NOT NULL
+  `pendapatan` varchar(40) NOT NULL,
+  `id_pekerjaan_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `penduduk_pendapatan`
 --
 
-INSERT INTO `penduduk_pendapatan` (`id_pendapatan`, `pendapatan`) VALUES
-(1, '<500rb'),
-(2, '500rb - 1jt'),
-(3, '1jt - 2jt'),
-(4, '2 - 3jt'),
-(5, '4 - 5jt'),
-(6, '5 - 10jt'),
-(7, '>10jt');
+INSERT INTO `penduduk_pendapatan` (`id_pendapatan`, `pendapatan`, `id_pekerjaan_fk`) VALUES
+(1, '<500rb', 0),
+(2, '500rb - 1jt', 0),
+(3, '1jt - 2jt', 0),
+(4, '2 - 3jt', 0),
+(5, '4 - 5jt', 0),
+(6, '5 - 10jt', 8),
+(7, '>10jt', 8),
+(8, 'Tidak ada', 1),
+(9, '2 - 3jt', 3),
+(10, '4 - 5jt', 3),
+(11, 'Tidak ada', 2),
+(12, '500rb - 1jt', 4),
+(13, '1jt - 2jt', 4),
+(14, '2 - 3jt', 4),
+(15, '4 - 5jt', 5),
+(16, '5 - 10jt', 5),
+(17, '>10jt', 5),
+(18, '1jt - 2jt', 6),
+(19, '2 - 3jt', 6),
+(20, '4 - 5jt', 6),
+(21, '4 - 5jt', 7),
+(22, '5 - 10jt', 7),
+(23, '>10jt', 7),
+(24, '<500rb', 9),
+(25, '500rb - 1jt', 9),
+(26, '1jt - 2jt', 9),
+(27, '2 - 3jt', 9),
+(28, '4 - 5jt', 9),
+(29, '<500rb', 12),
+(30, '500rb - 1jt', 12),
+(31, '1jt - 2jt', 12),
+(32, '2 - 3jt', 12),
+(33, '4 - 5jt', 12);
 
 -- --------------------------------------------------------
 
@@ -926,7 +953,22 @@ INSERT INTO `pengunjung` (`id_pengunjung`, `ip`, `tanggal`, `os`, `browser`, `on
 (81, '::1', '2021-10-11', '', '', '1633970823'),
 (82, '::1', '2021-10-11', '', '', '1633970824'),
 (83, '::1', '2021-10-11', '', '', '1633970868'),
-(84, '::1', '2021-10-11', '', '', '1633970868');
+(84, '::1', '2021-10-11', '', '', '1633970868'),
+(85, '::1', '2021-10-19', 'Windows 10', 'Chrome', '1634607871'),
+(86, '::1', '2021-10-19', 'Windows 10', 'Chrome', '1634607934'),
+(87, '::1', '2021-10-19', 'Windows 10', 'Chrome', '1634608015'),
+(88, '::1', '2021-10-19', 'Windows 10', 'Chrome', '1634608051'),
+(89, '::1', '2021-10-19', 'Windows 10', 'Chrome', '1634608103'),
+(90, '::1', '2021-10-19', 'Windows 10', 'Chrome', '1634608126'),
+(91, '127.0.0.1', '2021-10-27', 'Windows 10', 'Firefox', '1635306226'),
+(92, '::1', '2021-10-29', 'Windows 10', 'Chrome', '1635477749'),
+(93, '::1', '2021-11-04', 'Windows 10', 'Chrome', '1635999128'),
+(94, '::1', '2021-11-04', 'Windows 10', 'Chrome', '1635999135'),
+(95, '::1', '2021-11-04', 'Windows 10', 'Chrome', '1636033017'),
+(96, '::1', '2021-11-04', 'Windows 10', 'Chrome', '1636033049'),
+(97, '::1', '2021-11-04', 'Windows 10', 'Chrome', '1636033083'),
+(98, '::1', '2021-11-04', 'Windows 10', 'Chrome', '1636033088'),
+(99, '::1', '2021-11-04', 'Windows 10', 'Chrome', '1636033097');
 
 -- --------------------------------------------------------
 
@@ -958,7 +1000,7 @@ CREATE TABLE `profil` (
 --
 
 INSERT INTO `profil` (`id_desa`, `nama_desa`, `kode_desa`, `id_kades`, `kode_pos`, `nama_kecamatan`, `kode_kecamatan`, `nama_camat`, `nip_camat`, `nama_kabupaten`, `kode_kabupaten`, `nama_provinsi`, `kode_provinsi`, `alamat_kantor`, `telepon_desa`, `lambang_desa`) VALUES
-(4, 'Lawang Kamah', '73554', 19, '73554', 'Timpah', '62.03.10.2004', 'YUNDA NEVIANTRIE., S.Sos', '132 004 04 024', 'Kuala Kapuas', '62.03.10.2', 'Kalimantan Tengah', '62.04', 'Desa Lawang Kamah', '081282834376', '');
+(4, 'Lawang Kamahx', '73554', 19, '73554', 'Timpah', '62.03.10.2004', 'YUNDA NEVIANTRIE., S.Sos', '132 004 04 024', 'Kuala Kapuas', '62.03.10.2', 'Kalimantan Tengah', '62.04', 'Desa Lawang Kamah', '081282834376', '');
 
 -- --------------------------------------------------------
 
@@ -1333,7 +1375,7 @@ ALTER TABLE `baner`
 -- AUTO_INCREMENT for table `bantuan`
 --
 ALTER TABLE `bantuan`
-  MODIFY `id_bantuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_bantuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `bantuan_penerima`
@@ -1423,7 +1465,7 @@ ALTER TABLE `pejabat_desa`
 -- AUTO_INCREMENT for table `penduduk`
 --
 ALTER TABLE `penduduk`
-  MODIFY `id_penduduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_penduduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `penduduk_agama`
@@ -1465,7 +1507,7 @@ ALTER TABLE `penduduk_pekerjaan`
 -- AUTO_INCREMENT for table `penduduk_pendapatan`
 --
 ALTER TABLE `penduduk_pendapatan`
-  MODIFY `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `penduduk_pendidikan`
@@ -1525,7 +1567,7 @@ ALTER TABLE `pengajuan`
 -- AUTO_INCREMENT for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `id_pengunjung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id_pengunjung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `profil`

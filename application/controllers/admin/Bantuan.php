@@ -30,9 +30,8 @@ class Bantuan extends CI_Controller
         $data['pengajuan_header'] =
             $this->M_Cetak->get()->result_array();
         $data['title'] = 'Bantuan Desa';
-        $data['keluarga'] = $this->M_Keluarga->index();
-        $data['kelompok'] = $this->M_Kelompok->anggotakelompok();
-        $data['penduduk'] = $this->M_Penduduk->index();
+        $data['keluarga'] = $this->M_Bantuan->keluarga();
+        $data['penduduk'] = $this->M_Bantuan->penduduk();
         $data['bantuan'] = $this->M_Bantuan->index();
         //var_dump($data['kelompok']);
         $this->load->view('belakang/template/header', $data);

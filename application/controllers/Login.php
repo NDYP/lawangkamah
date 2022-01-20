@@ -68,6 +68,9 @@ class Login extends CI_Controller
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Salah</div>');
                     redirect('login/index');
                 }
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Salah</div>');
+                redirect('login/index');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun Tidak Terdaftar</div>');
